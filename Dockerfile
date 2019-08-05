@@ -18,7 +18,7 @@ RUN gcloud config set account ${GOOGLE_SERVICE_ACCOUNT}
 RUN gcloud config set project ${GOOGLE_PROJECT}
 
 # Terraform vars
-ENV TERRAFORM_VERSION=0.11.13
+ENV TERRAFORM_VERSION=0.12.6
 
 # Terraform install
 WORKDIR /usr/bin
@@ -26,7 +26,7 @@ RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
     unzip ./terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
 # Packer vars
-ENV PACKER_VERSION=1.4.0
+ENV PACKER_VERSION=1.4.2
 
 # Packer install
 WORKDIR /usr/bin
