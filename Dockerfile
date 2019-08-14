@@ -18,7 +18,7 @@ RUN gcloud config set account ${GOOGLE_SERVICE_ACCOUNT}
 RUN gcloud config set project ${GOOGLE_PROJECT}
 
 # Terraform vars
-ENV TERRAFORM_VERSION=0.12.6
+ENV TERRAFORM_VERSION=0.11.14
 
 # Terraform install
 WORKDIR /usr/bin
