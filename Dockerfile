@@ -12,10 +12,12 @@ ENV GOOGLE_SERVICE_ACCOUNT=myproject-terraform-accnt@lof-ws-test.iam.gserviceacc
 ENV GOOGLE_PROJECT=myproject
 
 # GCP configuration
-
 WORKDIR /
 RUN gcloud config set account ${GOOGLE_SERVICE_ACCOUNT}
 RUN gcloud config set project ${GOOGLE_PROJECT}
+
+# GCP extra components install
+RUN gcloud components install beta --quiet
 
 # Terraform vars
 ENV TERRAFORM_VERSION=0.12.6
