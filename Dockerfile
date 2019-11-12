@@ -18,6 +18,7 @@ WORKDIR /
 
 # GCP extra components install
 RUN gcloud components install beta --quiet
+RUN gcloud components install kubectl --quiet
 RUN gcloud components update --quiet
 
 # Terraform vars
