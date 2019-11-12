@@ -8,20 +8,20 @@ RUN apk add openssl
 RUN apk add git
 
 # GCP vars
-ENV GOOGLE_SERVICE_ACCOUNT=myproject-terraform-accnt@lof-ws-test.iam.gserviceaccount.com
-ENV GOOGLE_PROJECT=myproject
+#ENV GOOGLE_SERVICE_ACCOUNT=myproject-terraform-accnt@lof-ws-test.iam.gserviceaccount.com
+#ENV GOOGLE_PROJECT=myproject
 
 # GCP configuration
 WORKDIR /
-RUN gcloud config set account ${GOOGLE_SERVICE_ACCOUNT}
-RUN gcloud config set project ${GOOGLE_PROJECT}
+#RUN gcloud config set account ${GOOGLE_SERVICE_ACCOUNT}
+#RUN gcloud config set project ${GOOGLE_PROJECT}
 
 # GCP extra components install
 RUN gcloud components install beta --quiet
 RUN gcloud components update --quiet
 
 # Terraform vars
-ENV TERRAFORM_VERSION=0.12.8
+ENV TERRAFORM_VERSION=0.12.13
 
 # Terraform install
 WORKDIR /usr/bin
@@ -30,7 +30,7 @@ RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
     rm -f ./terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
 # Packer vars
-ENV PACKER_VERSION=1.4.3
+ENV PACKER_VERSION=1.4.5
 
 # Packer install
 WORKDIR /usr/bin
