@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/infra-as-code-tools:gcloud-full', '.' ]
+args: [ 'build', '--tag', 'gcr.io/$PROJECT_ID/infra-as-code-tools:$TAG_NAME', '--file', '$_DOCKERFILE' ]
 images:
-- 'gcr.io/$PROJECT_ID/infra-as-code-tools:gcloud-full'
+- 'gcr.io/$PROJECT_ID/infra-as-code-tools:$TAG_NAME'
