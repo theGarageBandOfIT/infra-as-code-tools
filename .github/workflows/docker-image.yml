@@ -16,4 +16,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${github.repository}:$(date +%s) --target tf --build-arg TERRAFORM_VERSION=0.14.8
+      run: |
+      echo $(github.repository)
+      docker build . --file Dockerfile --tag $(github.repository):$(date +%s) --target tf --build-arg TERRAFORM_VERSION=0.14.8
