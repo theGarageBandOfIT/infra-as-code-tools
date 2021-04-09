@@ -5,7 +5,7 @@ FROM alpine:latest as tf
 LABEL maintainer="Ludovic Piot <ludovic.piot@thegaragebandofit.com>"
 
 # Terraform vars
-ENV TERRAFORM_VERSION=0.12.24
+ARG TERRAFORM_VERSION=0.14.10
 
 # Terraform install
 WORKDIR /usr/bin
@@ -24,7 +24,7 @@ FROM alpine:latest as pac
 LABEL maintainer="Ludovic Piot <ludovic.piot@thegaragebandofit.com>"
 
 # Packer vars
-ENV PACKER_VERSION=1.5.5
+ARG PACKER_VERSION=1.7.2
 
 # Packer install
 WORKDIR /usr/bin
